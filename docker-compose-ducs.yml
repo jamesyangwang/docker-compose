@@ -2,7 +2,7 @@ version: '3'
 
 services:
   consumer_services:
-    image: jamesoy/ducs_consumer_services
+     image: jamesoy/ducs_consumer_services:latest
 #    build:
 #      context: services/.
 #      dockerfile: Dockerfile
@@ -26,7 +26,7 @@ services:
 #          - consumer_services
 
   admin_server:
-    image: jamesoy/ducs_admin_server
+     image: jamesoy/ducs_admin_server:latest
 #    build: 
 #      context: admin/.
 #      dockerfile: Dockerfile
