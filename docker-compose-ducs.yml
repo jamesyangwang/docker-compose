@@ -3,9 +3,6 @@ version: '3'
 services:
   consumer_services:
      image: jamesoy/ducs_consumer_services:latest
-#    build:
-#      context: services/.
-#      dockerfile: Dockerfile
     ports:
       - 8070:8080
     links:
@@ -15,128 +12,11 @@ services:
       - /app/logs/ducs:/app/logs/ducs
     environment:
       - ADMIN_SERVER_URL=http://admin_server:8090
-#      - "c:\\tmp:/tmp"
-#      - "c:\\app\\logs\\ducs:/app/logs/ducs"
-#    depends_on:
-#      - admin_server
-#    networks:
-#      ducs:
-#        ipv4_address: 172.25.0.102
-#        aliases:
-#          - consumer_services
 
   admin_server:
      image: jamesoy/ducs_admin_server:latest
-#    build: 
-#      context: admin/.
-#      dockerfile: Dockerfile
     ports:
       - 8090:8090
     volumes:
       - "/tmp:/tmp"
-#      - "c:\\tmp:/tmp"
-#    networks:
-#      ducs:
-#        ipv4_address: 172.25.0.101
-#        aliases:
-#          - admin_server
-
-#networks:
-#  ducs:
-#    driver: bridge
-#    ipam:
-#      config:
-#      - subnet: 172.25.0.0/24
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#mvn clean package -DskipTests
-#docker-compose build
-#docker-compose up -d --scale consumer-services=3
-#docker-compose ps
-#http://localhost.digicert.com:8090
-#http://localhost.digicert.com:32770/hello
-#http://localhost.digicert.com:32771/hello
-#http://localhost.digicert.com:32772/hello
-#docker-compose down
-
-
-
-
-
-
-
-
-
-
-
-#https://github.com/codecentric/spring-boot-admin/blob/master/spring-boot-admin-samples/spring-boot-admin-sample-eureka/docker-compose.yml
-
-#https://docs.docker.com/compose/reference/envvars/#compose_convert_windows_paths
-#before run 'docker-compose up -d'
-#'export COMPOSE_CONVERT_WINDOWS_PATHS=1' on linux 
-#'set COMPOSE_CONVERT_WINDOWS_PATHS=1'    in cmd window
-#'$env:COMPOSE_CONVERT_WINDOWS_PATHS=1'   in PowerShell
-
-#docker-compose up -d --scale consumer_services=3
-
-#https://docs.docker.com/compose/overview/
-
-#https://docs.docker.com/engine/reference/builder/#volume
-
-#https://docs.docker.com/compose/compose-file/
-#https://docs.docker.com/compose/compose-file/#volumes
-
-#https://docs.docker.com/docker-for-windows/networking/#known-limitations-use-cases-and-workarounds
-#https://docs.docker.com/docker-for-mac/networking/#known-limitations-use-cases-and-workarounds
-#Docker networks are accessible on Linux host only
-#and not accessible from the host on Windows and Mac
-#mapped ports are the only way to access container by host
-#https://stackoverflow.com/questions/46629526/docker-networks-not-exposed-to-host-on-windows
-
-#https://docs.docker.com/compose/compose-file/#ports
-
-#Compose CLI environment variables
-#https://docs.docker.com/compose/reference/envvars/
-
-
-
-
-
-
-
-
-
-
 
