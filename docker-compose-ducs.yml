@@ -2,7 +2,7 @@ version: '3'
 
 services:
   consumer_services:
-     image: jamesoy/ducs_consumer_services:latest
+    image: jamesoy/ducs_consumer_services:latest
     ports:
       - 8070:8080
     links:
@@ -14,7 +14,7 @@ services:
       - ADMIN_SERVER_URL=http://admin_server:8090
 
   admin_server:
-     image: jamesoy/ducs_admin_server:latest
+    image: jamesoy/ducs_admin_server:latest
     ports:
       - 8090:8090
     volumes:
